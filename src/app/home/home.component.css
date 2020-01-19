@@ -1,0 +1,33 @@
+.chart-container, .statics-container {
+  margin-top: 3.8rem;
+  margin-bottom: 5rem;
+}
+.chart-container .chart, .statics-container .content-wrapper{
+  padding: 1.25rem;
+  border-radius: 1px;
+  background-color: var(--secondary-bg-color);
+}
+.chart-container span {
+  margin: 5px 0;
+  display: block;
+  color: var(--secondary-text-color);
+}
+
+.statics-container .content-wrapper {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+/*
+.statics-container .content-wrapper .ui.statistic {
+  margin-left: 4rem;
+  margin-bottom: 3rem;
+} */
+
+.statics-container .content-wrapper .ui.statistic .label {
+  color: var(--primary-text-color);
+}
+
+.statics-container .content-wrapper .ui.statistic .value {
+  color: var(--secondary-text-color);
+}
