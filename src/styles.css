@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-bg-color: #5F4D8E;
+  --primary-nav-color: #2A223F;
+  --primary-text-color: #f6f6f6;
+  --secondary-bg-color: #3d315b;
+  --secondary-nav-color: #7272FF;
+  --secondary-text-color: #C5C5D1;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+}
+
+.ui.menu {
+  border-radius: 0px;
+  background-color: var(--primary-nav-color);
+}
+
+.ui.menu .item {
+  transition: all 320ms;
+  color: var(--secondary-text-color);
+  border-color: var(--secondary-text-color);
+}
+
+.ui.menu>.item:first-child {
+  border-radius: 0px;
+}
+
+.ui.menu a.item.active,
+.ui.menu a.item:hover,
+.ui.menu a.item:focus,
+.ui.menu .item.active,
+.ui.menu .item:hover,
+.ui.menu .item:focus,
+.ui.menu .dropdown.item:hover,
+.ui.menu .dropdown.item:focus  {
+  transition: all 320ms;
+  color: var(--primary-text-color);
+  background-color: var(--secondary-nav-color);
+}
