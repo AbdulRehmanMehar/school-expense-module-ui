@@ -1,27 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { User } from './models/user.model';
+import { Store, select } from '@ngrx/store';
 import { Title } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
+import { changeUserToAccountant, changeUserToPrincipal } from './actions/user.actions';
 
-interface User {
-  name: string;
-  role: string;
-  image: string;
-}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  public user: User;
 
-  public user: User = {
-    name: 'Accountant',
-    role: 'accountant',
-    image: 'accountant-avatar.jpeg'
-  };
-
-  public constructor(private titleService: Title, router: Router) {
+  public constructor(
+    private store: Store<{ user: User }>,
+    private titleService: Title,
+    router: Router
+  ) {
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         let title = this.getTitle(
@@ -45,26 +42,20 @@ export class AppComponent {
     return data;
   }
 
-  public handleUserChange() {
-    if (this.user.role === 'accountant') {
-      this.switchUserToPrincipal();
+  handleUserChange() {
+    if (this.user.role === 'principal') {
+      this.store.dispatch(changeUserToAccountant());
     } else {
-      this.switchUserToAccountant();
+      this.store.dispatch(changeUserToPrincipal());
     }
   }
 
-  public switchUserToPrincipal() {
-    this.user = {
-      name: 'Principal',
-      role: 'principal',
-      image: 'principal-avatar.jpeg'
-    }
+  ngOnInit() {
+    this.store.pipe(select('user'))
+      .subscribe(user => {
+        this.user = user;
+      });
   }
-  public switchUserToAccountant() {
-    this.user = {
-      name: 'Accountant',
-      role: 'accountant',
-      image: 'accountant-avatar.jpeg'
-    }
-  }
+
+
 }
