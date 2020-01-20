@@ -1,0 +1,40 @@
+.log-container {
+  margin-top: 3.8rem;
+  margin-bottom: 5rem;
+}
+
+.log-container .log {
+  padding: 1.25rem;
+  overflow-x: auto;
+  border-radius: 1px;
+  max-width: inherit;
+}
+
+.log-container .pagination-wrapper {
+  padding: 1.25rem;
+  text-align: right;
+}
+
+.ui.pagination.menu.inverted .disabled.item {
+  color: var(--secondary-text-color)
+}
+
+.head p {
+  width: inherit;
+  color: var(--primary-text-color);
+}
+.head p  span{
+  float: right;
+  display: block;
+}
+a {
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 320ms;
+  color: var(--secondary-text-color);
+}
+
+a:hover, a:focus {
+  transition: all 320ms;
+  color: var(--primary-text-color);
+}
