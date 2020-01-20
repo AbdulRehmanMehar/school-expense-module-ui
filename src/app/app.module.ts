@@ -12,10 +12,26 @@ import { BudgetIssuanceComponent } from './budget-issuance/budget-issuance.compo
 import { ModuleInsidesComponent } from './module-insides/module-insides.component';
 import { AddModuleComponent } from './add-module/add-module.component';
 
+import { StoreModule } from '@ngrx/store';
+import { userReducer } from './reducers/user.reducer';
+
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ChartComponent, BudgetLogComponent, BudgetIssuanceComponent, ModuleInsidesComponent, AddModuleComponent],
-  imports: [BrowserModule, AppRoutingModule, ChartsModule],
-  providers: [Title, AppComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ChartComponent,
+    BudgetLogComponent,
+    BudgetIssuanceComponent,
+    ModuleInsidesComponent,
+    AddModuleComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ChartsModule,
+    StoreModule.forRoot({ user: userReducer })
+  ],
+  providers: [Title],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
