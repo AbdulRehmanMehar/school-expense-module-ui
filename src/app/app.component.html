@@ -28,19 +28,23 @@
           </div>
         </div>
       </div>
-      <a class="item" [routerLink]="['/add-module']">
+      <a *ngIf="user.role == 'principal'" class="item" [routerLink]="['/view-modules']">
+        <i class="icon bullseye"></i>
+        View Sub Module
+      </a>
+      <a *ngIf="user.role == 'principal'" class="item" [routerLink]="['/add-module']">
         <i class="icon servicestack"></i>
         Add Sub Module
       </a>
       <div class="right menu">
         <div class="ui simple dropdown item">
-          <img class="ui avatar image" src="../assets/images/accountant-avatar.jpeg" alt="Avatar">
-          Accountant
+          <img class="ui avatar image" [src]="['../assets/images/' + user.image]" alt="Avatar">
+          {{ user.name }}
 
           <i class="dropdown icon"></i>
           <div class="menu">
-            <a class="item">
-              <i class="edit icon"></i> Principal
+            <a class="item" (click)="handleUserChange()">
+              <i class="edit icon"></i> {{ user.role == 'accountant' ? 'Principal' : 'Accountant' }}
             </a>
             <a class="ui item">
               <i class="icon user times"></i> Logout
