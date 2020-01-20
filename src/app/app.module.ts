@@ -15,7 +15,7 @@ import { AddModuleComponent } from './add-module/add-module.component';
 @NgModule({
   declarations: [AppComponent, HomeComponent, ChartComponent, BudgetLogComponent, BudgetIssuanceComponent, ModuleInsidesComponent, AddModuleComponent],
   imports: [BrowserModule, AppRoutingModule, ChartsModule],
-  providers: [Title],
+  providers: [Title, AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
