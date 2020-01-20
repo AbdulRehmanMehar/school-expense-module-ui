@@ -1,0 +1,49 @@
+.wrapper{
+  margin-top: 3.8rem;
+  margin-bottom: 5rem;
+}
+.wrapper .inner {
+  padding: 1.25rem;
+  border-radius: 1px;
+  /* background-color: var(--secondary-bg-color); */
+}
+
+.wrapper .inner .headline {
+  margin-left: 15px;
+}
+
+p {
+  color: var(--primary-text-color);
+}
+
+.wrapper .inner .content-wrapper {
+  position: relative;
+  background-color: var(--primary-nav-color);
+}
+
+.wrapper .inner .content-wrapper .ui.statistic .label {
+  color: var(--primary-text-color);
+}
+
+.wrapper .inner .content-wrapper .ui.statistic .value {
+  color: var(--secondary-text-color);
+}
+
+.wrapper .inner .content-wrapper {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.top.right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+  padding: 10px 5px;
+}
+
+.top.right a {
+  color: red;
+  cursor: pointer;
+}
