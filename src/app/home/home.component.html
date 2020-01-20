@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <div class="column">
+      <div class="column" *ngIf="user.role == 'principal'">
         <div class="ui segment content-wrapper">
           <div class="ui statistic">
             <div class="label">
