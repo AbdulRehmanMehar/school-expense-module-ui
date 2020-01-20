@@ -10,7 +10,7 @@
 .chart-container span {
   margin: 5px 0;
   display: block;
-  color: var(--secondary-text-color);
+  color: var(--primary-text-color);
 }
 
 .statics-container .content-wrapper {
