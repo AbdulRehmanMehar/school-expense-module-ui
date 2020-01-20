@@ -12,7 +12,7 @@ body {
   background-color: var(--primary-bg-color);
 }
 
-.ui.menu {
+.ui.menu:not(.pagination) {
   border-radius: 0px;
   background-color: var(--primary-nav-color);
 }
