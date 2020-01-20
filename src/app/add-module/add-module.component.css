@@ -1,0 +1,54 @@
+.wrapper {
+  display: flex;
+  width: inherit;
+  align-items: center;
+  flex-direction: column;
+}
+.form-container {
+  width: 500px;
+  margin-top: 3.8rem;
+  margin-bottom: 5rem;
+}
+.form-container .form0 {
+  padding: 1.25rem;
+  border-radius: 1px;
+  background-color: var(--secondary-bg-color);
+}
+
+.form-container .form0  .ui.header{
+  text-align: center;
+  color: var(--primary-text-color);
+}
+
+
+.ui.inverted.form input:not([type]), .ui.inverted.form input[type=date], .ui.inverted.form input[type=datetime-local], .ui.inverted.form input[type=email], .ui.inverted.form input[type=file], .ui.inverted.form input[type=number], .ui.inverted.form input[type=password], .ui.inverted.form input[type=search], .ui.inverted.form input[type=tel], .ui.inverted.form input[type=text], .ui.inverted.form input[type=time], .ui.inverted.form input[type=url], .ui.form textarea, .ui.form .ui.button, .ui.form select {
+  resize: none;
+  color: var(--secondary-text-color);
+  background-color: var(--primary-nav-color);
+}
+
+.ui.inverted.form input:focus, .ui.form select:focus, .ui.form textarea:focus {
+  border-color: var(--secondary-nav-color);
+}
+
+.field.btn {
+  text-align: right;
+}
+
+.ui.form .ui.button:hover, .ui.form .ui.button:focus {
+  transition: all 320ms;
+  color: var(--primary-text-color);
+  background-color: var(--secondary-nav-color);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance:textfield;
+}
