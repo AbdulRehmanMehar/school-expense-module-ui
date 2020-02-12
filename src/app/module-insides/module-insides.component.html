@@ -5,8 +5,8 @@
 
       <!-- <div class="eight wide column content-wrapper">One</div>
         <div class="eight wide column content-wrapper">TWO</div> -->
-      <div class="three column row">
-        <div class="column">
+      <div class="three column row" *ngIf="modules$ && modules$.length > 0">
+        <!-- <div class="column">
           <div class="ui segment content-wrapper">
             <div class="top right">
               <a title="Delete this module"> <i class="icon trash"></i> </a>
@@ -31,20 +31,23 @@
               </p>
             </div>
           </div>
-        </div>
-        <div class="column">
+        </div> -->
+
+
+        <div class="column" *ngFor="let module of modules$">
           <div class="ui segment content-wrapper">
             <div class="top right">
-              <a title="Delete this module"> <i class="icon trash"></i> </a>
+              <a title="Delete this module [Disabled due to unauthenticated access to firestore]" (click)="deleteModule(module.id)"> <i class="icon trash"></i> </a>
             </div>
             <div class="ui statistic">
               <div class="label">
-                Staff Salary
+                {{ module.name }}
               </div>
-              <div class="value">
-                Module
+              <br>
+              <div class="value" title="Total Budget Issued">
+                $ {{ getBudgetOfModule(module.id) }}
               </div>
-              <p style="text-align: right; margin-top: 1rem;">
+              <!-- <p style="text-align: right; margin-top: 1rem;">
                 <a class="ui labeled inverted icon button" [routerLink]="['/budget-log']">
                   <i class="icon eye"></i>
                   View Log
@@ -54,11 +57,12 @@
                   Issue Budget
                 </a>
 
-              </p>
+              </p> -->
             </div>
           </div>
         </div>
-        <div class="column">
+
+        <!-- <div class="column">
           <div class="ui segment content-wrapper">
             <div class="ui statistic">
               <div class="label">
@@ -75,7 +79,7 @@
               </p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
