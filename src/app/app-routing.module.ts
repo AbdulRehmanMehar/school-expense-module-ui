@@ -1,3 +1,4 @@
+import { RouteGaurdService } from './services/route-gaurd.service';
 import { ModuleInsidesComponent } from './module-insides/module-insides.component';
 import { AddModuleComponent } from './add-module/add-module.component';
 import { BudgetIssuanceComponent } from './budget-issuance/budget-issuance.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
   },
   {
     path: 'add-module',
+    canActivate: [RouteGaurdService],
     component: AddModuleComponent,
     data: {
       title: 'Create Sub Module - School Expense Module'
@@ -46,6 +48,7 @@ const routes: Routes = [
   },
   {
     path: 'view-modules',
+    canActivate: [RouteGaurdService],
     component: ModuleInsidesComponent,
     data: {
       title: 'View Sub Modules - School Expense Module'
