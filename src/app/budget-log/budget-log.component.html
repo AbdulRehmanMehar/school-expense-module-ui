@@ -1,7 +1,7 @@
 <div class="log-container">
   <div class="log">
     <div class="head">
-      <p>Budget Information - Maintenance Module
+      <p>Budget Information
         <span class="right">
           <a> <i class="icon file pdf"></i> Save as PDF</a>
           <a> <i class="icon print"></i> Print</a>
@@ -16,11 +16,22 @@
           <th>Description</th>
           <th>Issued By</th>
           <th>Date</th>
-          <th>Actions</th>
+          <!-- <th>Actions</th> -->
         </tr>
       </thead>
-      <tbody>
-        <tr>
+      <tbody *ngIf="budget$ && modules$ && budget$.length > 0 && modules$.length > 0">
+        <tr *ngFor="let budget of budget$">
+          <td>{{ getModuleName(budget.module) }}</td>
+          <td>${{ budget.amount }}</td>
+          <td>{{ budget.description }}</td>
+          <td>{{ budget.issued_by }}</td>
+          <td>{{ budget.date }}</td>
+          <!-- <td>
+            <a><i class="icon file pdf"></i> Save</a>
+            <a><i class="icon print"></i>Print</a>
+          </td> -->
+        </tr>
+        <!-- <tr>
           <td>Maintenance Module</td>
           <td>1,00,000</td>
           <td>Budget was issued for school maintenance.</td>
@@ -91,23 +102,11 @@
             <a><i class="icon file pdf"></i> Save</a>
             <a><i class="icon print"></i>Print</a>
           </td>
-        </tr>
-        <tr>
-          <td>Maintenance Module</td>
-          <td>1,00,000</td>
-          <td>Budget was issued for school maintenance.</td>
-          <td>Accountant</td>
-          <td>September 14, 2019</td>
-          <td>
-
-            <a><i class="icon file pdf"></i> Save</a>
-            <a><i class="icon print"></i>Print</a>
-          </td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
   </div>
-  <div class="pagination-wrapper">
+  <!-- <div class="pagination-wrapper">
     <div class="ui pagination inverted menu">
       <a class="active item">
         1
@@ -125,5 +124,5 @@
         12
       </a>
     </div>
-  </div>
+  </div> -->
 </div>
