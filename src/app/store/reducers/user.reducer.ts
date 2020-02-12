@@ -1,4 +1,4 @@
-import { User } from './../models/user.model';
+import { User } from '../models/user.model';
 import { createReducer, on } from '@ngrx/store';
 import { changeUserToPrincipal, changeUserToAccountant } from '../actions/user.actions';
 
