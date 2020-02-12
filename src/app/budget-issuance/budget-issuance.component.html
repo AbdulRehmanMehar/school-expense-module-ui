@@ -5,33 +5,39 @@
         <i class="shipping fast icon"></i>
         Issue Budget
       </h2>
-      <form class="ui form inverted">
+      <form class="ui form inverted" [formGroup]="form$" (ngSubmit)="submit()">
         <div class="field">
           <label>Title</label>
-          <input type="text" placeholder="Salary">
+          <input type="text" placeholder="Salary" formControlName="title">
         </div>
 
         <div class="field">
           <label>Module</label>
-          <select>
+          <select formControlName="module" *ngIf="modules$.length > 0; else NoModules">
             <option value="">Select</option>
-            <option value="1">Salary Module</option>
-            <option value="0">Maintenance Module</option>
+            <option *ngFor="let module of modules$" [value]="module.id">{{ module.name }}</option>
           </select>
         </div>
 
         <div class="field">
           <label>Budget</label>
-          <input type="number" placeholder="Budget">
+          <input type="number" placeholder="Budget" formControlName="amount">
         </div>
         <div class="field">
           <label>Description</label>
-          <textarea rows="2" placeholder="Salary Module requested 50,000"></textarea>
+          <textarea rows="2" placeholder="Salary Module requested 50,000" formControlName="description"></textarea>
         </div>
         <div class="field btn">
-          <button class="ui button" type="button">Issue Budget</button>
+          <button class="ui button" type="submit" [disabled]="!form$.valid">Issue Budget</button>
         </div>
       </form>
     </div>
   </div>
 </div>
+
+<ng-template #NoModules>
+  <p style="color: #FFFF">There is no module to Issue Budget.
+    <span *ngIf="user$.role == 'accountant'">Contact Principal to add Modules.</span>
+    <a [routerLink]="['/add-module']" *ngIf="user$.role == 'principal'">Go ahead and add modules to issue budget.</a>
+  </p>
+</ng-template>
