@@ -23,6 +23,11 @@ body {
   border-color: var(--secondary-text-color);
 }
 
+.notifier__notification {
+  color: var(--primary-text-color);
+  background-color: var(--secondary-bg-color);
+}
+
 .ui.menu>.item:first-child {
   border-radius: 0px;
 }

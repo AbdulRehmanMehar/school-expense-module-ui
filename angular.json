@@ -26,6 +26,8 @@
             "styles": [
               "node_modules/chart.js/dist/Chart.min.css",
               "node_modules/semantic-ui-css/semantic.min.css",
+              "node_modules/angular-notifier/styles/themes/theme-material.css",
+              "node_modules/angular-notifier/styles/core.css",
               "src/styles.css"
             ],
             "scripts": [
