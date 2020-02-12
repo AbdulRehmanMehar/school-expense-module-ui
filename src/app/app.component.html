@@ -5,7 +5,15 @@
         <i class="icon home"></i>
         Home
       </a>
-      <div class="item dropdown ui simple">
+      <a [routerLink]="['/budget-log']" class="item">
+        <i class="icon table"></i>
+        View Budget Issued
+      </a>
+      <a [routerLink]="['/issue-budget']" class="item">
+        <i class="icon shipping fast"></i>
+        Issue Budget
+      </a>
+      <!-- <div class="item dropdown ui simple">
         <i class="icon stack exchange"></i>
         Sub Modules
         <i class="dropdown icon"></i>
@@ -27,7 +35,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <a *ngIf="user.role == 'principal'" class="item" [routerLink]="['/view-modules']">
         <i class="icon bullseye"></i>
         View Sub Module
@@ -61,3 +69,4 @@
 
 </div>
 
+<notifier-container></notifier-container>
