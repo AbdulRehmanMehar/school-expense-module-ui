@@ -5,18 +5,14 @@
         <i class="servicestack icon"></i>
         Create Sub Module
       </h2>
-      <form class="ui form inverted">
+      <form class="ui form inverted" [formGroup]="form$" (ngSubmit)="submit()">
         <div class="field">
           <label>Name</label>
-          <input type="text" placeholder="Classroom">
+          <input type="text" placeholder="Classroom" formControlName="name">
         </div>
 
-        <div class="field">
-          <label>Description</label>
-          <textarea rows="2" placeholder="This module inculdes classrooms etc"></textarea>
-        </div>
         <div class="field btn">
-          <button class="ui button" type="button">Create</button>
+          <button class="ui button" type="submit" [disabled]="!form$.valid">Create</button>
         </div>
       </form>
     </div>
