@@ -1,6 +1,6 @@
-<div class="chart-container">
+<div class="chart-container" *ngIf="budget$ && budget$.length > 0 && modules$ && modules$.length > 0">
   <div class="chart">
-    <app-chart></app-chart>
+    <app-chart  [budget$]="budget$" [modules$]="modules$"></app-chart>
   </div>
   <span>  Budget Issued - Graphical Representation</span>
 </div>
@@ -17,7 +17,7 @@
               Total Budget Issued
             </div>
             <div class="value">
-              50,00,000
+              ${{ getTotalBudget() }}
             </div>
             <p style="text-align: right; margin-top: 1rem;">
               <a class="ui labeled inverted icon button" [routerLink]="['/budget-log']">
