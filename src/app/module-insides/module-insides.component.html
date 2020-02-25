@@ -34,7 +34,7 @@
         </div> -->
 
 
-        <div class="column" *ngFor="let module of modules$">
+        <div class="column" *ngFor="let module of modules$" style="margin: 12.5px 0px">
           <div class="ui segment content-wrapper">
             <div class="top right">
               <a title="Delete this module [Disabled due to unauthenticated access to firestore]" (click)="deleteModule(module.id)"> <i class="icon trash"></i> </a>
